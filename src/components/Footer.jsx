@@ -42,7 +42,7 @@ export default function Footer() {
         {/* Branding */}
         <div>
           <div className="font-display" style={{ fontSize: '1.5rem', fontWeight: 900 }}>
-            chloé.
+            Diyā.
           </div>
           <div
             className="font-mono-accent"

@@ -95,9 +95,9 @@ export default function Contact() {
             style={{ marginTop: '2.5rem' }}
           >
             {[
-              { label: 'Email', value: 'hello@chloe.design' },
-              { label: 'Based in', value: 'Paris, France' },
-              { label: 'Available', value: 'From Feb 2025' },
+              { label: 'Email', value: 'diyakhatri1405@gmail.com' },
+              { label: 'Phone', value: '+91 6367993341' },
+              { label: 'Based in', value: 'Jaipur, Rajasthan' },
             ].map(({ label, value }) => (
               <div
                 key={label}

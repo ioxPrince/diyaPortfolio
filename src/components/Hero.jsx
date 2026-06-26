@@ -19,9 +19,13 @@ const wordVariants = {
 
 export default function Hero() {
   const ref = useRef(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  const { scrollYProgress, scrollY } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+
+  const shapeY1 = useTransform(scrollY, [0, 800], [0, 150])
+  const shapeY2 = useTransform(scrollY, [0, 800], [0, 200])
+  const shapeY3 = useTransform(scrollY, [0, 800], [0, -100])
 
   return (
     <section
@@ -54,7 +58,34 @@ export default function Hero() {
         }}
       />
 
-      <motion.div style={{ y, opacity }}>
+      {/* Decorative Background Shapes */}
+      {/* 1. Yellow Circle (Top Right) */}
+      <motion.div
+        style={{ y: shapeY1 }}
+        className="absolute -top-12 -right-12 w-64 h-64 md:w-96 md:h-96 rounded-full bg-butter border-2 border-ink shadow-brut pointer-events-none"
+        animate={{ rotate: [0, 90, 0] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+      />
+
+      {/* 2. Blue Square (Bottom Left) */}
+      <motion.div
+        style={{ y: shapeY2 }}
+        className="absolute bottom-24 left-[5%] w-40 h-40 md:w-56 md:h-56 bg-electric border-2 border-ink shadow-brut pointer-events-none"
+        animate={{ rotate: [0, 12, 0, -12, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* 3. Green Dot (Near text) */}
+      <motion.div style={{ y: shapeY3 }} className="absolute top-[25%] left-[30%] pointer-events-none">
+        <motion.div
+          className="w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-ink shadow-brut"
+          style={{ backgroundColor: '#85E89D' }}
+          animate={{ y: [0, -16, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
+
+      <motion.div style={{ y, opacity }} className="relative z-10">
         {/* Tag line */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -96,7 +127,7 @@ export default function Hero() {
             overflow: 'hidden',
           }}
         >
-          {['Creative', 'Designer &', 'Dreamer.'].map((line) => (
+          {['Graphic', 'Designer &', 'Artist.'].map((line) => (
             <div
               key={line}
               style={{ overflow: 'hidden', display: 'block' }}
@@ -106,8 +137,8 @@ export default function Hero() {
                 style={{
                   display: 'block',
                   willChange: 'transform',
-                  color: line === 'Dreamer.' ? 'transparent' : 'var(--ink)',
-                  WebkitTextStroke: line === 'Dreamer.' ? '2px var(--ink)' : 'none',
+                  color: line === 'Artist.' ? 'transparent' : 'var(--ink)',
+                  WebkitTextStroke: line === 'Artist.' ? '2px var(--ink)' : 'none',
                 }}
               >
                 {line}
@@ -138,8 +169,7 @@ export default function Hero() {
               color: 'rgba(10,10,10,0.65)',
             }}
           >
-            I craft digital experiences that feel alive — from bold brand identities
-            to motion-rich interfaces.
+            Transforming ideas into visually compelling brand experiences.
           </p>
 
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

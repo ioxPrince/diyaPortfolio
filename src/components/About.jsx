@@ -2,9 +2,9 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const skills = [
-  'Brand Identity', 'UI Design', 'Motion Graphics',
-  'Typography', 'Art Direction', 'Design Systems',
-  'Web Design', 'Illustration', '3D / Blender',
+  'Branding', 'Social Media', 'Visual Design',
+  'Digital Art', 'Typography', 'Illustration',
+  'Print Design', 'Photo Retouching',
 ]
 
 const fadeUp = {
@@ -79,9 +79,8 @@ export default function About() {
             custom={2}
             style={{ fontSize: '1rem', lineHeight: 1.8, opacity: 0.75, maxWidth: '440px' }}
           >
-            I'm Chloé, a multidisciplinary designer based in Paris. For 6+ years,
-            I've been crafting brands and digital products that combine sharp
-            aesthetics with intentional user experience.
+            I am Diya Khatri, a passionate graphic designer based in Jaipur, Rajasthan.
+            I focus on delivering creative solutions that meet both aesthetic and business objectives.
           </motion.p>
 
           <motion.p
@@ -91,8 +90,8 @@ export default function About() {
             custom={3}
             style={{ fontSize: '1rem', lineHeight: 1.8, opacity: 0.75, maxWidth: '440px', marginTop: '1.2rem' }}
           >
-            When I'm not designing, I'm sketching in notebooks, exploring film
-            photography, or hunting for the perfect croissant.
+            I love turning ideas into impactful visuals that connect brands with their audience,
+            specializing in branding, digital art, and visual design.
           </motion.p>
 
           <motion.div
@@ -103,9 +102,9 @@ export default function About() {
             style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
           >
             {[
-              { label: '6+', sub: 'Years experience' },
-              { label: '80+', sub: 'Projects delivered' },
-              { label: '30+', sub: 'Happy clients' },
+              { label: '1+', sub: 'Years experience' },
+              { label: 'B.A.', sub: 'Final Year (SGVU)' },
+              { label: '2+', sub: 'Certifications' },
             ].map(({ label, sub }) => (
               <div
                 key={label}
@@ -193,7 +192,7 @@ export default function About() {
               Tools
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
-              {['Figma', 'After Effects', 'Illustrator', 'Photoshop', 'Blender', 'Framer'].map(
+              {['Adobe Photoshop', 'Adobe Illustrator', 'Canva Pro'].map(
                 (tool) => (
                   <span
                     key={tool}

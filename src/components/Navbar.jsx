@@ -32,7 +32,7 @@ export default function Navbar() {
         data-cursor="Home"
         style={{ textDecoration: 'none', color: 'var(--ink)' }}
       >
-        chloé.
+        Diyā.
       </a>
 
       {/* Nav Links */}
@@ -56,7 +56,7 @@ export default function Navbar() {
           </a>
         ))}
         <a
-          href="mailto:hello@chloe.design"
+          href="mailto:diyakhatri1405@gmail.com"
           data-cursor="Email"
           style={{
             fontFamily: "'Cabinet Grotesk', sans-serif",
