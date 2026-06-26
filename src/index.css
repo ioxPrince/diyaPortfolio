@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900,700,500,400&f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --ink: #0a0a0a;
+  --cream: #fdfbf7;
+  --butter: #ffb800;
+  --blush: #ff5280;
+  --lavender: #6b5bff;
+  --radius: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  /* Lenis will handle this */
+}
+
+html,
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Satoshi', 'Space Grotesk', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom cursor */
+@media (pointer: fine) {
+
+  html,
+  body,
+  * {
+    cursor: none !important;
+  }
+}
+
+::selection {
+  background: var(--butter);
+  color: var(--ink);
+}
+
+.font-display {
+  font-family: 'Cabinet Grotesk', 'Syne', system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+
+.font-mono-accent {
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2px var(--ink);
+  color: transparent;
+}
+
+/* Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Noise grain overlay */
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ink);
+  border-radius: 3px;
+}
+
+/* Marquee */
+.rfm-marquee-container {
+  overflow: hidden;
+}
